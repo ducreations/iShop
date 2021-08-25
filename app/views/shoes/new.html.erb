@@ -1,0 +1,22 @@
+<div class="container">
+<h3>Add new shoes in the market</h3>
+
+  <%= form_for @shoe do |f| %>
+    <div class="field">
+      Shoes name<%= f.text_field :name, autofocus: true, required: true, class:"form-control" %>
+    </div><br>
+    <div class="field">
+      Shoes available<%= f.number_field :qty, min: 1, max: 100, required: true, class:"form-control" %>
+    </div><br>
+    <div class="field">
+      Shoes price<%= f.text_field :price, class:"form-control", required: true, class:"form-control" %>
+    </div><br>
+
+    <div class="actions">
+      <%= f.submit "Add shoes" %>
+    </div><br>
+
+  <% end %>
+
+<%= link_to 'Cancel', shoes_path %>
+</div>

@@ -1,0 +1,26 @@
+<h1>Men's Shoes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Shoes name</th>
+      <th>Available quantity</th>
+      <th>Shoes price</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @shoes.each do |shoe| %>
+      <tr>
+        <td><%= shoe.name %></td>
+        <td><%= shoe.qty %>pieces</td>
+        <td>₱<%= shoe.price %></td>
+        <td><%= user_action(shoe) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<hr>
+
+<%= current_user_action %>
+<%= link_to 'Home', '/' %>
